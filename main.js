@@ -1,8 +1,6 @@
 let button = document.querySelector('button');
 let counter = 0;
 
-
-
 button.addEventListener('click', () => {
     let container = document.querySelector(`.container${counter}`);
     counter++
@@ -12,7 +10,7 @@ button.addEventListener('click', () => {
     div.style.height = '100%' 
     container.appendChild(div)
     
-    if(div.offsetWidth < 1105 || div.offsetHeight < 140){
+    if(div.offsetWidth < 714 || div.offsetHeight < 69){
         resetContainer();
     }
     console.log(div.offsetWidth, div.offsetHeight)

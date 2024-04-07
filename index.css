@@ -30,8 +30,8 @@ button {
 
 .container0 {
   border: 20px solid black;
-  width: 1925px;
-  height: 960px;
+  width: 100vw;
+  height: 100vh;
 }
 
 /*# sourceMappingURL=index.css.map */
