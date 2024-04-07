@@ -16,7 +16,7 @@ body {
 
 button {
   position: absolute;
-  top: 50%;
+  top: 47%;
   left: 45%;
   width: 200px;
   height: 50px;
@@ -26,6 +26,12 @@ button {
   margin: 0 auto;
   cursor: pointer;
   z-index: 1000;
+}
+
+.container0 {
+  border: 20px solid black;
+  width: 1925px;
+  height: 960px;
 }
 
 /*# sourceMappingURL=index.css.map */

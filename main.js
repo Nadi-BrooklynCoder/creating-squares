@@ -1,31 +1,30 @@
-let body = document.querySelector('body');
 let button = document.querySelector('button');
-let currentDiv = document.createElement('div');
 let counter = 0;
 
-currentDiv.setAttribute('class', `container${counter}`);
-currentDiv.style.position = 'absolute';
-currentDiv.style.height = '100%';
-currentDiv.style.width = '100%';
-currentDiv.style.border = '10px solid black';
-body.appendChild(currentDiv);
+
 
 button.addEventListener('click', () => {
-    let newDiv = document.createElement('div');
-    newDiv.setAttribute('class', `container${counter}` )
-    newDiv.style.border = '30px solid' + getRandomColor();
-    newDiv.style.height = `calc(100% - ${.1 + counter * .1}px)`; // Subtract the border width
-    newDiv.style.width = `calc(100% - ${.1 + counter * .1}px)`; // Subtract the border width
-    newDiv.style.position = `absolute`;
-    newDiv.style.top = `${.01 + counter * .01}px`; // Half of the border width
-    newDiv.style.left = `${.01 + counter * .01}px`; // Half of the border width
+    let container = document.querySelector(`.container${counter}`);
+    counter++
+    const div = document.createElement('div');
+    div.setAttribute('class', `container${counter}`)
+    div.style.border = '30px solid' + getRandomColor(); 
+    div.style.height = '100%' 
+    container.appendChild(div)
     
-    currentDiv.appendChild(newDiv)
-    currentDiv = newDiv;
-    counter++;
+    if(div.offsetWidth < 1105 || div.offsetHeight < 140){
+        resetContainer();
+    }
+    console.log(div.offsetWidth, div.offsetHeight)
 })
 
 function getRandomColor() {
     return '#' + Math.floor(Math.random() * 16777215).toString(16);
+}
+
+function resetContainer() {
+    const firstDiv = document.querySelector('.container1');
+    firstDiv.remove();
+    counter = 0;
 }
 
